@@ -32,8 +32,7 @@ def exp_calc(x, r):
                     ret = eval(
                         source % tuple([tp[0](x) if tp[0] else x, tp[1](x) if tp[1] else x, tp[2](x) if tp[2] else x]))
                     if ret == r:
-                        print format_math_function[tp[0]], x, first_op, format_math_function[tp[1]], x, second_op, \
-                        format_math_function[tp[2]], x, '=', ret
+                        print '%s' * 10 % (format_math_function[tp[0]],x,first_op,format_math_function[tp[1]],x,second_op,format_math_function[tp[2]],x,'=',ret)
             except Exception:
                 continue
 
