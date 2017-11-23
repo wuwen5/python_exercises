@@ -19,7 +19,7 @@ def format_math_function(f):
         return ''
 
 
-def exp_calc(x):
+def exp_calc(x, r):
     for first_op in symbol:
         for second_op in symbol:
             try:
@@ -30,19 +30,19 @@ def exp_calc(x):
                         n = x
 
                     ret = calc(calc(n, n, first_op), n, second_op)
-                    if ret == 6:
+                    if ret == r:
                         print format_math_function(np), x, first_op, format_math_function(
                             np), x, second_op, format_math_function(np), x, '=', ret
                         return ret
                     ret = calc(n, calc(n, n, first_op), second_op)
-                    if ret == 6:
+                    if ret == r:
                         print format_math_function(np), x, first_op, '(', format_math_function(
                             np), x, second_op, format_math_function(np), x, ')', '=', ret
                         return ret
             except Exception:
                 continue
 
-    print x, '暂无解'
+    print x, '未完待续...'
 
 
 ##解题  x ? x ? x = 6
@@ -52,4 +52,4 @@ for i in [2, 3, 4, 5, 6, 7, 8, 9]:
 
 print '解:'
 for i in [2, 3, 4, 5, 6, 7, 8, 9]:
-    exp_calc(i)
+    exp_calc(i, 6)
