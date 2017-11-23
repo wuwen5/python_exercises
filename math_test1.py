@@ -1,21 +1,15 @@
 # -*- coding: utf-8 -*-
-# @author wenwu (wuwen5 at gmail dot com)
+# @author wenwu (wuwen dot 55 at gmail dot com)
 import math
 
-#已知运算连接符
+# 已知运算连接符
 symbol = ['+', '-', '*', '/', '>>', '|', '<<', '%', '^']
 
 num_symbol = ['', math.sqrt]
 
 
 def calc(x, y, s):
-    exp = '%s%s%s' % (x, s, y)
-    if s == '/' and y != 0:
-        return x / y
-    elif s == '%' and y != 0:
-        return x % y
-    else:
-        return eval(exp)
+    return eval('%s%s%s' % (x, s, y))
 
 
 def format_math_function(f):
