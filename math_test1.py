@@ -3,7 +3,7 @@
 import math
 
 # 已知运算连接符
-symbol = ['+', '-', '*', '/', '>>', '|', '<<', '%', '^']
+symbol = ['+', '-', '*', '/', '>>', '|', '<<', '%', '^', '**']
 
 num_symbol = ['', math.sqrt]
 
@@ -47,9 +47,9 @@ def exp_calc(x, r):
 
 ##解题  x ? x ? x = 6
 print '题:'
-for i in [2, 3, 4, 5, 6, 7, 8, 9]:
+for i in range(2, 10):
     print i, ' ', i, ' ', i, '=', '6'
 
 print '解:'
-for i in [2, 3, 4, 5, 6, 7, 8, 9]:
+for i in range(2, 10):
     exp_calc(i, 6)
