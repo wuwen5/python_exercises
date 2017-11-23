@@ -3,7 +3,7 @@
 import math
 
 # 已知运算连接符
-symbol = ['+', '-', '*', '/', '>>', '|', '<<', '%', '^', '**']
+symbol = ['+', '-', '*', '/', '%', '>>', '<<']
 
 
 def sqrt3(n):
@@ -34,15 +34,13 @@ def exp_calc(x, r):
                         print format_math_function[np], x, first_op, format_math_function[
                             np], x, second_op, format_math_function[np], x, '=', ret
                         return ret
-                    ret = calc(n, calc(n, n, first_op), second_op)
+                    ret = calc(n, calc(n, n, second_op), first_op)
                     if ret == r:
                         print format_math_function[np], x, first_op, '(', format_math_function[
                             np], x, second_op, format_math_function[np], x, ')', '=', ret
                         return ret
             except Exception:
                 continue
-
-    print x, '未完待续...'
 
 
 ##解题  x ? x ? x = 6
