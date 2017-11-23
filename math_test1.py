@@ -5,7 +5,12 @@ import math
 # 已知运算连接符
 symbol = ['+', '-', '*', '/', '>>', '|', '<<', '%', '^', '**']
 
-num_symbol = ['', math.sqrt]
+
+def sqrt3(n):
+    return n ** (1. / 3)
+
+
+num_symbol = ['', math.sqrt, sqrt3]
 
 
 def calc(x, y, s):
@@ -15,6 +20,8 @@ def calc(x, y, s):
 def format_math_function(f):
     if f == math.sqrt:
         return '√'
+    elif f == sqrt3:
+        return '3√'
     else:
         return ''
 
