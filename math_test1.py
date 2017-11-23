@@ -12,18 +12,11 @@ def sqrt3(n):
 
 num_symbol = ['', math.sqrt, sqrt3]
 
+format_math_function = {math.sqrt: '√', sqrt3: '3√', '': ''}
+
 
 def calc(x, y, s):
     return eval('%s%s%s' % (x, s, y))
-
-
-def format_math_function(f):
-    if f == math.sqrt:
-        return '√'
-    elif f == sqrt3:
-        return '3√'
-    else:
-        return ''
 
 
 def exp_calc(x, r):
@@ -38,13 +31,13 @@ def exp_calc(x, r):
 
                     ret = calc(calc(n, n, first_op), n, second_op)
                     if ret == r:
-                        print format_math_function(np), x, first_op, format_math_function(
-                            np), x, second_op, format_math_function(np), x, '=', ret
+                        print format_math_function[np], x, first_op, format_math_function[
+                            np], x, second_op, format_math_function[np], x, '=', ret
                         return ret
                     ret = calc(n, calc(n, n, first_op), second_op)
                     if ret == r:
-                        print format_math_function(np), x, first_op, '(', format_math_function(
-                            np), x, second_op, format_math_function(np), x, ')', '=', ret
+                        print format_math_function[np], x, first_op, '(', format_math_function[
+                            np], x, second_op, format_math_function[np], x, ')', '=', ret
                         return ret
             except Exception:
                 continue
